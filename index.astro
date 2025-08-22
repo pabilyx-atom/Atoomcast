@@ -1,0 +1,30 @@
+---
+import "@/styles/global.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Section from "@/components/Section.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import VideoCard from "@/components/VideoCard.astro";
+import { featured } from "@/data/videos";
+---
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="هایلایت پادکست‌های محبوب و ویدیوهای ادیت‌شده علمی/اتوم" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>YOUR BRAND — هایلایت پادکست و ویدیو</title>
+  </head>
+  <body>
+    <Header title="YOUR BRAND" tagline="هایلایت پادکست‌های محبوب و ویدیوهای محبوبِ ادیت‌شده (علم و اتوم)" />
+    <Section title="هایلایت‌های منتخب" subtitle="بهترین کلیپ‌ها و بخش‌های مهم">
+      <div class="grid cards">
+        {featured.map((v) => <VideoCard item={v} />)}
+      </div>
+    </Section>
+    <Section title="ارتباط و همکاری" subtitle="برای سفارش ادیت یا همکاری تماس بگیر">
+      <SocialLinks />
+    </Section>
+    <Footer />
+  </body>
+</html>

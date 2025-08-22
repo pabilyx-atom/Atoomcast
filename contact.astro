@@ -1,0 +1,26 @@
+---
+import "@/styles/global.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Section from "@/components/Section.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+---
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>ارتباط — YOUR BRAND</title>
+  </head>
+  <body>
+    <Header title="YOUR BRAND" tagline="راه‌های ارتباطی و درخواست همکاری" />
+    <Section title="شبکه‌های اجتماعی">
+      <SocialLinks />
+    </Section>
+    <Section title="فرم ایمیل (ساده)">
+      <p class="lead">برای همکاری ایمیل بزن: <a href="mailto:your@email.com">
+        your@email.com
+      </a></p>
+    </Section>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,21 @@
+---
+import type { VideoItem } from "@/data/videos";
+const { item }:{ item: VideoItem } = Astro.props;
+---
+<article class="card">
+  <a href={item.url} target="_blank" rel="noopener">
+    <img class="thumb" src={item.cover} alt={item.title} loading="lazy" />
+  </a>
+  <div class="pad">
+    <div class="row" style="justify-content: space-between;">
+      <h3 style="margin:0;">{item.title}</h3>
+      {item.duration && <span class="tag">{item.duration}</span>}
+    </div>
+    {item.highlight && <p class="small" style="margin:8px 0 0;">{item.highlight}</p>}
+    {item.tags && item.tags.length > 0 && (
+      <div class="row" style="margin-top:10px;">
+        {item.tags.map(t => <span class="tag">{t}</span>)}
+      </div>
+    )}
+  </div>
+</article>
